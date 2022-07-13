@@ -6,7 +6,7 @@ import { ThemeProvider } from '@rneui/themed';
 
 import { NavigationTheme, RNETheme } from 'src/assets/theme';
 
-const Index = ({ children }: PropsWithChildren) => {
+const AppContainer = ({ children }: PropsWithChildren) => {
   return (
     <NavigationContainer theme={NavigationTheme}>
       <ThemeProvider theme={RNETheme}>{children}</ThemeProvider>
@@ -14,4 +14,4 @@ const Index = ({ children }: PropsWithChildren) => {
   );
 };
 
-export default Index;
+export default AppContainer;
