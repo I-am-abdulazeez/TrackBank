@@ -5,3 +5,5 @@ export const FONTS = {
   regular: 'AlbertSans-Regular',
   light: 'AlbertSans-Light',
 };
+
+export const AppLogo = require('../assets/images/logo.png');
