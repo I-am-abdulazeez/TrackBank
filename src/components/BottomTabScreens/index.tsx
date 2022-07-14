@@ -7,6 +7,7 @@ import { Icon } from '@rneui/themed';
 import HomeScreen from 'src/screens/Home';
 import SendReceiveScreen from 'src/screens/SendReceive';
 import ChartScreen from 'src/screens/Chart';
+import SettingsScreen from 'src/screens/Settings';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -66,6 +67,21 @@ const BottomTabScreens = () => {
         }}
         name="Chart"
         component={ChartScreen}
+      />
+      <BottomTab.Screen
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, focused }) => (
+            <Icon
+              name={focused ? 'ios-settings' : 'ios-settings-outline'}
+              type="ionicon"
+              color={color}
+              size={23}
+            />
+          ),
+        }}
+        name="Settings"
+        component={SettingsScreen}
       />
     </BottomTab.Navigator>
   );
