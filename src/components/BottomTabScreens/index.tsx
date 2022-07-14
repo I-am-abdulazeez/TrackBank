@@ -8,7 +8,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const BottomTab = createBottomTabNavigator();
 
-const DashboardScreens = () => {
+const BottomTabScreens = () => {
   return (
     <BottomTab.Navigator>
       <BottomTab.Screen
@@ -24,4 +24,4 @@ const DashboardScreens = () => {
   );
 };
 
-export default DashboardScreens;
+export default BottomTabScreens;
