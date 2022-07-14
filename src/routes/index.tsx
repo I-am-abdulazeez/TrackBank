@@ -6,7 +6,7 @@ import { RootStackParamList } from 'src/types';
 
 // Routes
 import WelcomeScreen from 'src/screens/Welcome';
-import DashboardScreens from 'src/components/DashboardScreens';
+import BottomTabScreens from 'src/components/BottomTabScreens';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -23,7 +23,7 @@ const AppRoutes = () => {
       <Stack.Screen
         name="Dashboard"
         options={{ headerShown: false }}
-        component={DashboardScreens}
+        component={BottomTabScreens}
       />
     </Stack.Navigator>
   );
