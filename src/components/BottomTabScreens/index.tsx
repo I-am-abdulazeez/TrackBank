@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Icon } from '@rneui/themed';
 
 import HomeScreen from 'src/screens/Home';
-import SendRecieveScreen from 'src/screens/SendRecieve';
+import SendReceiveScreen from 'src/screens/SendReceive';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -48,7 +48,7 @@ const BottomTabScreens = () => {
           ),
         }}
         name="SendRecieve"
-        component={SendRecieveScreen}
+        component={SendReceiveScreen}
       />
     </BottomTab.Navigator>
   );
