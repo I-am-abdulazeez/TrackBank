@@ -2,15 +2,29 @@ import React from 'react';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-// Routes
-import Welcome from 'src/screens/Welcome';
+import { RootStackParamList } from 'src/types';
 
-const Stack = createNativeStackNavigator();
+// Routes
+import WelcomeScreen from 'src/screens/Welcome';
+import DashboardScreens from 'src/components/DashboardScreens';
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const AppRoutes = () => {
   return (
     <Stack.Navigator initialRouteName="Welcome">
-      <Stack.Screen name="Welcome" component={Welcome} />
+      <Stack.Screen
+        name="Welcome"
+        options={{
+          headerShown: false,
+        }}
+        component={WelcomeScreen}
+      />
+      <Stack.Screen
+        name="Dashboard"
+        options={{ headerShown: false }}
+        component={DashboardScreens}
+      />
     </Stack.Navigator>
   );
 };
