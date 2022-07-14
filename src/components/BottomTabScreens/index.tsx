@@ -6,6 +6,7 @@ import { Icon } from '@rneui/themed';
 
 import HomeScreen from 'src/screens/Home';
 import SendReceiveScreen from 'src/screens/SendReceive';
+import ChartScreen from 'src/screens/Chart';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -49,6 +50,22 @@ const BottomTabScreens = () => {
         }}
         name="SendRecieve"
         component={SendReceiveScreen}
+      />
+      <BottomTab.Screen
+        options={{
+          headerShown: false,
+          tabBarLabel: 'Trasaction Chart',
+          tabBarIcon: ({ color, focused }) => (
+            <Icon
+              name={focused ? 'ios-pie-chart' : 'ios-pie-chart-outline'}
+              type="ionicon"
+              color={color}
+              size={23}
+            />
+          ),
+        }}
+        name="Chart"
+        component={ChartScreen}
       />
     </BottomTab.Navigator>
   );
