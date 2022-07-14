@@ -2,9 +2,9 @@ import React from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import HomeScreen from 'src/screens/Home';
+import { Icon } from '@rneui/themed';
 
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import HomeScreen from 'src/screens/Home';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -13,8 +13,14 @@ const BottomTabScreens = () => {
     <BottomTab.Navigator>
       <BottomTab.Screen
         options={{
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home-outline" color={color} size={size} />
+            <Icon
+              name="home-outline"
+              type="ionicon"
+              color={color}
+              size={size}
+            />
           ),
         }}
         name="Home"
