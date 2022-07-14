@@ -1,23 +1,23 @@
 import React from 'react';
+import { StatusBar, SafeAreaView } from 'react-native';
 
-import { StatusBar, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import { Button, Text } from '@rneui/themed';
-import { RootStackParamList } from 'src/types';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { Button, Text, useTheme } from '@rneui/themed';
 
-type NavScreenProps = NativeStackNavigationProp<RootStackParamList>;
+import { NavScreenProps } from 'src/types';
 
 const WelcomeScreen = () => {
-  const navigation = useNavigation<NavScreenProps>();
+  const { navigate } = useNavigation<NavScreenProps>();
+  const { theme } = useTheme();
   return (
-    <View>
-      <Text>Welcome Page</Text>
-      <Button onPress={() => navigation.navigate('Dashboard')}>
-        Go to Home
-      </Button>
-    </View>
+    <SafeAreaView style={{ backgroundColor: theme.colors.primary, flex: 1 }}>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor={theme.colors.primary}
+      />
+      <Text>WelcomeScreen 2</Text>
+    </SafeAreaView>
   );
 };
 
