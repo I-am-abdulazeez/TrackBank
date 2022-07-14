@@ -59,8 +59,7 @@ const Styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   lgText: {
-    fontFamily: FONTS.semiBold,
-    fontStyle: 'italic',
+    fontFamily: FONTS.semiBoldItalic,
     fontSize: 30,
     color: 'white',
   },
