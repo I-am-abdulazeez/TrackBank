@@ -13,7 +13,7 @@ const WelcomeScreen = () => {
   const { theme } = useTheme();
 
   return (
-    <SafeAreaView style={{ backgroundColor: theme.colors.primary, flex: 1 }}>
+    <SafeAreaView style={{ backgroundColor: theme.colors.primary }}>
       <StatusBar
         barStyle="light-content"
         backgroundColor={theme.colors.primary}
@@ -27,7 +27,28 @@ const WelcomeScreen = () => {
           <Text style={Styles.lgText}>Build Money,</Text>
           <Text style={Styles.lgText}>the smart way.</Text>
         </View>
-        <View></View>
+        <View style={Styles.buttonStack}>
+          <Button
+            titleStyle={{ color: theme.colors.white }}
+            buttonStyle={{
+              backgroundColor: theme.colors.primary,
+              borderColor: theme.colors.white,
+              borderWidth: 1,
+              width: '100%',
+            }}
+            type="solid">
+            Login
+          </Button>
+          <Button
+            type="solid"
+            titleStyle={{ color: theme.colors.primary }}
+            buttonStyle={{
+              backgroundColor: theme.colors.white,
+              width: '100%',
+            }}>
+            Register
+          </Button>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -37,7 +58,7 @@ export default WelcomeScreen;
 
 const Styles = StyleSheet.create({
   welcomeWrapper: {
-    padding: 18.2,
+    padding: 30,
     justifyContent: 'space-between',
     height: '100%',
   },
@@ -62,5 +83,11 @@ const Styles = StyleSheet.create({
     fontFamily: FONTS.semiBoldItalic,
     fontSize: 30,
     color: 'white',
+    textAlign: 'center',
+  },
+  buttonStack: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    paddingHorizontal: 50,
   },
 });
