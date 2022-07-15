@@ -23,31 +23,40 @@ const WelcomeScreen = () => {
           <Image style={Styles.appLogo} source={AppLogo} />
           <Text style={Styles.brandText}>Track Bank</Text>
         </View>
+
         <View>
           <Text style={Styles.lgText}>Build Money,</Text>
           <Text style={Styles.lgText}>the smart way.</Text>
+          <Text style={Styles.mdText}>Save and recieve money faster. </Text>
         </View>
-        <View style={Styles.buttonStack}>
-          <Button
-            titleStyle={{ color: theme.colors.white }}
-            buttonStyle={{
-              backgroundColor: theme.colors.primary,
-              borderColor: theme.colors.white,
-              borderWidth: 1,
-              width: '100%',
-            }}
-            type="solid">
-            Login
-          </Button>
-          <Button
-            type="solid"
-            titleStyle={{ color: theme.colors.primary }}
-            buttonStyle={{
-              backgroundColor: theme.colors.white,
-              width: '100%',
-            }}>
-            Register
-          </Button>
+
+        <View>
+          <View style={Styles.buttonStack}>
+            <Button
+              titleStyle={{ color: theme.colors.white }}
+              buttonStyle={{
+                backgroundColor: theme.colors.primary,
+                borderColor: theme.colors.white,
+                borderWidth: 1.5,
+                width: '100%',
+              }}
+              type="solid">
+              Login
+            </Button>
+            <View style={{ marginHorizontal: 10 }} />
+            <Button
+              type="solid"
+              titleStyle={{ color: theme.colors.primary }}
+              buttonStyle={{
+                backgroundColor: theme.colors.white,
+                width: '100%',
+              }}>
+              Register
+            </Button>
+          </View>
+          <View style={{ marginTop: theme.spacing.xl }}>
+            <Text style={Styles.smText}>Banking with satisfaction...</Text>
+          </View>
         </View>
       </View>
     </SafeAreaView>
@@ -63,7 +72,7 @@ const Styles = StyleSheet.create({
     height: '100%',
   },
   imageTextContainer: {
-    marginTop: 15,
+    marginTop: 10,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -80,9 +89,22 @@ const Styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   lgText: {
-    fontFamily: FONTS.semiBoldItalic,
-    fontSize: 30,
+    fontFamily: FONTS.bold,
+    fontSize: 40,
     color: 'white',
+    textAlign: 'center',
+  },
+  mdText: {
+    fontFamily: FONTS.mediumItalic,
+    fontSize: 16,
+    color: 'white',
+    textAlign: 'center',
+    marginTop: 5,
+  },
+  smText: {
+    fontFamily: FONTS.mediumItalic,
+    color: 'white',
+    fontSize: 15,
     textAlign: 'center',
   },
   buttonStack: {
