@@ -34,6 +34,7 @@ const WelcomeScreen = () => {
           <View style={Styles.buttonStack}>
             <Button
               titleStyle={{ color: theme.colors.white }}
+              onPress={() => navigate('Login')}
               buttonStyle={{
                 backgroundColor: theme.colors.primary,
                 borderColor: theme.colors.white,
@@ -47,6 +48,7 @@ const WelcomeScreen = () => {
             <Button
               type="solid"
               titleStyle={{ color: theme.colors.primary }}
+              onPress={() => navigate('Register')}
               buttonStyle={{
                 backgroundColor: theme.colors.white,
                 width: '100%',
