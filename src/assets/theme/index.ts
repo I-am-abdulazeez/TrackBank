@@ -2,6 +2,8 @@ import { DefaultTheme } from '@react-navigation/native';
 
 import { createTheme } from '@rneui/themed';
 
+import { FONTS } from 'src/constants';
+
 export const NavigationTheme = {
   ...DefaultTheme,
   colors: {
@@ -15,5 +17,12 @@ export const RNETheme = createTheme({
     primary: '#218C74',
     success: '#00B894',
     error: '#FF7979',
+  },
+  Button: {
+    radius: 10,
+    titleStyle: { fontFamily: FONTS.semiBold },
+    buttonStyle: {
+      height: 45,
+    },
   },
 });
