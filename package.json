@@ -1,6 +1,6 @@
 {
   "name": "trackbank",
-  "version": "0.0.1",
+  "version": "0.2.1",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -16,7 +16,7 @@
     "@rneui/base": "^4.0.0-rc.5",
     "@rneui/themed": "^4.0.0-rc.5",
     "react": "18.0.0",
-    "react-native": "^0.69.1",
+    "react-native": "0.69.2",
     "react-native-safe-area-context": "^4.3.1",
     "react-native-screens": "^3.14.0",
     "react-native-vector-icons": "^9.2.0"
