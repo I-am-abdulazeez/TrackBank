@@ -1,4 +1,6 @@
-export const FONTS = {
+import AppLogo from 'src/assets/images/logo.png';
+
+const FONTS = {
   bold: 'AlbertSans-Bold',
   boldItalic: 'AlbertSans-BoldItalic',
   semiBold: 'AlbertSans-SemiBold',
@@ -10,4 +12,4 @@ export const FONTS = {
   lightItalic: 'AlbertSans-LightItalic',
 };
 
-export const AppLogo = require('../assets/images/logo.png');
+export { FONTS, AppLogo };
