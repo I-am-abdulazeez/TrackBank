@@ -1,6 +1,7 @@
-import { Text } from '@rneui/themed';
 import React from 'react';
 import { Image, SafeAreaView, StyleSheet, View } from 'react-native';
+
+import { Text } from '@rneui/themed';
 
 import PrimaryWrapper from 'src/components/PrimaryWrapper';
 
