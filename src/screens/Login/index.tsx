@@ -9,6 +9,8 @@ import {
 
 import { Button, Input, Text, useTheme } from '@rneui/themed';
 
+import PrimaryWrapper from 'src/components/PrimaryWrapper';
+
 import { AppLogo, FONTS } from 'src/constants';
 
 const LoginScreen = () => {
@@ -16,33 +18,49 @@ const LoginScreen = () => {
   const { theme } = useTheme();
   return (
     <SafeAreaView>
-      <View style={Styles.primaryWrapper}>
+      <PrimaryWrapper>
         <Image style={Styles.appLogo} source={AppLogo} />
         <Text style={Styles.welcomeText}>Welcome back</Text>
         <Text style={Styles.missedText}>You've been missed.</Text>
-      </View>
+      </PrimaryWrapper>
       <View style={Styles.secWrapper}>
-        <Text
-          style={{ ...Styles.detailsText, color: isDark ? '#fff' : '#A0AEC0' }}>
-          Login your details.
-        </Text>
-        <Input
-          inputContainerStyle={{
-            backgroundColor: isDark ? '' : 'white',
-          }}
-          inputStyle={{ color: isDark ? '#fff' : '#000' }}
-          placeholder="Phone number"
-        />
-        <Input
-          inputContainerStyle={{
-            backgroundColor: isDark ? '' : 'white',
-          }}
-          inputStyle={{ color: isDark ? '#fff' : '#000' }}
-          placeholder="Password"
-        />
+        <View>
+          <Text
+            style={{
+              ...Styles.detailsText,
+              color: isDark ? '#fff' : '#A0AEC0',
+            }}>
+            Login your details.
+          </Text>
+          <Input
+            inputContainerStyle={{
+              backgroundColor: isDark ? '' : 'white',
+            }}
+            inputStyle={{ color: isDark ? '#fff' : '#000' }}
+            placeholder="Phone number"
+          />
+          <Input
+            inputContainerStyle={{
+              backgroundColor: isDark ? '' : 'white',
+            }}
+            inputStyle={{ color: isDark ? '#fff' : '#000' }}
+            placeholder="Password"
+          />
 
-        <View style={{ paddingHorizontal: 10, marginTop: 10 }}>
-          <Button buttonStyle={{ height: 50 }}>Submit</Button>
+          <View style={{ paddingHorizontal: 10, marginTop: 10 }}>
+            <Button buttonStyle={{ height: 50 }}>Login</Button>
+          </View>
+        </View>
+
+        <View style={{ marginTop: 150 }}>
+          <Text
+            style={{
+              color: isDark ? 'white' : '',
+              fontFamily: FONTS.mediumItalic,
+              textAlign: 'center',
+            }}>
+            Banking with satisfaction...
+          </Text>
         </View>
       </View>
     </SafeAreaView>
@@ -52,15 +70,11 @@ const LoginScreen = () => {
 export default LoginScreen;
 
 const Styles = StyleSheet.create({
-  primaryWrapper: {
-    height: '44.5%',
-    textAlign: 'center',
-    padding: 40,
-    alignItems: 'center',
-    backgroundColor: '#218C74',
-  },
   secWrapper: {
     padding: 20,
+    justifyContent: 'space-between',
+    flexDirection: 'column',
+    height: '45%',
   },
   appLogo: {
     width: 65.5,
