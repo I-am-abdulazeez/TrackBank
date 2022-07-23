@@ -25,4 +25,16 @@ export const RNETheme = createTheme({
       height: 45,
     },
   },
+  Input: {
+    inputContainerStyle: {
+      borderRadius: 10,
+      padding: 3,
+      borderColor: '#D8EFEA',
+      borderWidth: 1,
+    },
+    inputStyle: {
+      fontFamily: FONTS.medium,
+      paddingHorizontal: 10,
+    },
+  },
 });
