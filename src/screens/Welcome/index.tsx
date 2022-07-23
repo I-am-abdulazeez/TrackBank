@@ -1,5 +1,12 @@
 import React from 'react';
-import { StatusBar, SafeAreaView, Image, View, StyleSheet } from 'react-native';
+import {
+  StatusBar,
+  SafeAreaView,
+  Image,
+  View,
+  StyleSheet,
+  useColorScheme,
+} from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -9,6 +16,7 @@ import { NavScreenProps } from 'src/types';
 import { AppLogo, FONTS } from 'src/constants';
 
 const WelcomeScreen = () => {
+  const isDark = useColorScheme() === 'dark';
   const { navigate } = useNavigation<NavScreenProps>();
   const { theme } = useTheme();
 
@@ -57,7 +65,9 @@ const WelcomeScreen = () => {
             </Button>
           </View>
           <View style={{ marginTop: theme.spacing.xl }}>
-            <Text style={Styles.smText}>Banking with satisfaction...</Text>
+            <Text style={{ ...Styles.smText, color: isDark ? 'white' : '' }}>
+              Banking with satisfaction...
+            </Text>
           </View>
         </View>
       </View>
@@ -105,7 +115,6 @@ const Styles = StyleSheet.create({
   },
   smText: {
     fontFamily: FONTS.mediumItalic,
-    color: 'white',
     fontSize: 15,
     textAlign: 'center',
   },
