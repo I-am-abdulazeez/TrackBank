@@ -1,9 +1,9 @@
 import React from 'react';
-import { StatusBar, SafeAreaView, View, StyleSheet } from 'react-native';
+import { StatusBar, SafeAreaView, Image, View, StyleSheet } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 
-import { Button, Image, Text, useTheme } from '@rneui/themed';
+import { Button, Text, useTheme } from '@rneui/themed';
 
 import { NavScreenProps } from 'src/types';
 import { AppLogo, FONTS } from 'src/constants';
