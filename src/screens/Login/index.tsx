@@ -12,10 +12,32 @@ import { Button, Input, Text, useTheme } from '@rneui/themed';
 import PrimaryWrapper from 'src/components/PrimaryWrapper';
 
 import { AppLogo, FONTS } from 'src/constants';
+import { useNavigation } from '@react-navigation/native';
+import { NavScreenProps, RootStackParamList } from 'src/types';
 
 const LoginScreen = () => {
   const isDark = useColorScheme() === 'dark';
   const { theme } = useTheme();
+  const { navigate } = useNavigation<NavScreenProps>();
+
+  const inputBgColor = isDark ? '' : 'white';
+  const inputColor = isDark ? '#fff' : '#000';
+
+  const inputContainerStyle = {
+    backgroundColor: inputBgColor,
+  };
+
+  const loginTextStyle = {
+    ...Styles.detailsText,
+    color: isDark ? '#fff' : '#A0AEC0',
+  };
+
+  const stuffStyle: any = {
+    color: isDark ? 'white' : '',
+    fontFamily: FONTS.mediumItalic,
+    textAlign: 'center',
+  };
+
   return (
     <SafeAreaView>
       <PrimaryWrapper>
@@ -25,42 +47,39 @@ const LoginScreen = () => {
       </PrimaryWrapper>
       <View style={Styles.secWrapper}>
         <View>
-          <Text
-            style={{
-              ...Styles.detailsText,
-              color: isDark ? '#fff' : '#A0AEC0',
-            }}>
-            Login your details.
-          </Text>
+          <Text style={loginTextStyle}>Login your details.</Text>
           <Input
-            inputContainerStyle={{
-              backgroundColor: isDark ? '' : 'white',
-            }}
-            inputStyle={{ color: isDark ? '#fff' : '#000' }}
+            inputContainerStyle={inputContainerStyle}
+            inputStyle={{ color: inputColor }}
             placeholder="Phone number"
           />
           <Input
-            inputContainerStyle={{
-              backgroundColor: isDark ? '' : 'white',
-            }}
-            inputStyle={{ color: isDark ? '#fff' : '#000' }}
+            inputContainerStyle={inputContainerStyle}
+            inputStyle={{ color: inputColor }}
             placeholder="Password"
           />
 
           <View style={{ paddingHorizontal: 10, marginTop: 10 }}>
             <Button buttonStyle={{ height: 50 }}>Login</Button>
           </View>
+
+          <View style={{ marginTop: 20 }}>
+            <Text style={Styles.noAccounText}>
+              No account yet?{' '}
+              <Text
+                onPress={() => navigate('Register')}
+                style={{
+                  color: theme.colors.primary,
+                  textDecorationLine: 'underline',
+                }}>
+                Register
+              </Text>
+            </Text>
+          </View>
         </View>
 
-        <View style={{ marginTop: 150 }}>
-          <Text
-            style={{
-              color: isDark ? 'white' : '',
-              fontFamily: FONTS.mediumItalic,
-              textAlign: 'center',
-            }}>
-            Banking with satisfaction...
-          </Text>
+        <View style={{ marginTop: 230 }}>
+          <Text style={stuffStyle}>Banking with satisfaction...</Text>
         </View>
       </View>
     </SafeAreaView>
@@ -84,21 +103,26 @@ const Styles = StyleSheet.create({
   },
   welcomeText: {
     fontSize: 20,
-    fontFamily: FONTS.mediumItalic,
+    fontFamily: FONTS.medium,
     marginTop: 20,
     color: 'white',
   },
   missedText: {
-    fontSize: 25,
+    fontSize: 20,
     fontFamily: FONTS.medium,
     marginTop: 10,
     color: 'white',
   },
   detailsText: {
-    fontSize: 22.5,
+    fontSize: 22,
     fontFamily: FONTS.medium,
     marginTop: 20,
     marginBottom: 40,
     marginLeft: 8,
+  },
+  noAccounText: {
+    textAlign: 'center',
+    color: 'white',
+    fontSize: 15,
   },
 });
