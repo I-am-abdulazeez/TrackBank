@@ -9,7 +9,6 @@ export default PrimaryWrapper;
 
 const Styles = StyleSheet.create({
   primaryWrapper: {
-    height: '45%',
     textAlign: 'center',
     padding: 40,
     alignItems: 'center',
