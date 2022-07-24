@@ -64,13 +64,18 @@ const LoginScreen = () => {
           </View>
 
           <View style={{ marginTop: 20 }}>
-            <Text style={Styles.noAccounText}>
+            <Text
+              style={{
+                ...Styles.noAccountText,
+                color: isDark ? 'white' : '#000',
+              }}>
               No account yet?{' '}
               <Text
                 onPress={() => navigate('Register')}
                 style={{
                   color: theme.colors.primary,
                   textDecorationLine: 'underline',
+                  fontFamily: FONTS.medium,
                 }}>
                 Register
               </Text>
@@ -120,9 +125,9 @@ const Styles = StyleSheet.create({
     marginBottom: 40,
     marginLeft: 8,
   },
-  noAccounText: {
+  noAccountText: {
     textAlign: 'center',
-    color: 'white',
-    fontSize: 15,
+    fontSize: 16,
+    fontFamily: FONTS.medium,
   },
 });
