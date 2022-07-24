@@ -7,15 +7,19 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import { Button, Input, Text } from '@rneui/themed';
+import { Button, Input, Text, useTheme } from '@rneui/themed';
 
 import PrimaryWrapper from 'src/components/PrimaryWrapper';
 
 import { AppLogo, FONTS } from 'src/constants';
+import { NavScreenProps } from 'src/types';
 
 const RegisterScreen = () => {
   const isDark = useColorScheme() === 'dark';
+  const { theme } = useTheme();
+  const { navigate } = useNavigation<NavScreenProps>();
 
   const inputBgColor = isDark ? '' : 'white';
   const inputColor = isDark ? '#fff' : '#000';
@@ -71,8 +75,27 @@ const RegisterScreen = () => {
               placeholder="Confirm password"
             />
 
-            <View style={{ paddingHorizontal: 10, marginVertical: 20 }}>
+            <View style={{ paddingHorizontal: 10, marginTop: 20 }}>
               <Button buttonStyle={{ height: 50 }}>Register</Button>
+            </View>
+
+            <View style={{ marginTop: 20 }}>
+              <Text
+                style={{
+                  ...Styles.accountText,
+                  color: isDark ? 'white' : '#000',
+                }}>
+                Already have an account{' '}
+                <Text
+                  onPress={() => navigate('Login')}
+                  style={{
+                    color: theme.colors.primary,
+                    textDecorationLine: 'underline',
+                    fontFamily: FONTS.medium,
+                  }}>
+                  Login
+                </Text>
+              </Text>
             </View>
           </View>
         </View>
@@ -106,5 +129,10 @@ const Styles = StyleSheet.create({
     fontFamily: FONTS.medium,
     marginBottom: 30,
     marginLeft: 8,
+  },
+  accountText: {
+    textAlign: 'center',
+    fontSize: 16,
+    fontFamily: FONTS.medium,
   },
 });
